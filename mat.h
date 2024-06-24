@@ -8,6 +8,9 @@ typedef struct {
     double nums[];
 }Mat;
 
+#define mat_it_rows(mat, it) for (size_t it = 0; it < (mat)->rows; ++it)
+#define mat_it_columns(mat, it) for (size_t it = 0; it < (mat)->columns; ++it)
+
 Mat* mat_new(size_t rows, size_t columns);
 Mat* mat_zeroes(size_t rows, size_t columns);
 Mat* mat_new_identity(size_t side);

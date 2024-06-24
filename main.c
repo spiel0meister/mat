@@ -7,13 +7,14 @@
 int main(void) {
     Mat* mat1 = mat_new(2, 3);
 
-    for (size_t i = 0; i < mat1->rows; ++i) {
-        for (size_t j = 0; j < mat1->columns; ++j) {
+    mat_it_rows(mat1, i) {
+        mat_it_columns(mat1, j) {
             mat_set(mat1, i, j, rand() % 10);
         }
     }
 
     mat_dump(mat1);
+    printf("---\n");
     Mat* mat2 = mat_scale(mat1, 10);
     mat_dump(mat2);
 
